@@ -2,12 +2,13 @@ class House:
     house_history = []
 
     def __new__(cls, *args, **kwargs):
+        cls.house_history.append(args)
         return object.__new__(cls)
 
     def __init__(self, name, number_of_floors):
         self.name = name
         self.number_of_floors = number_of_floors
-        self.house_history.append(self.name)
+        #self.house_history.append(self.name)
 
 
     def go_to(self, new_floor):
